@@ -1,0 +1,56 @@
+#suggestions {
+    border: 1px solid #ccc;
+    max-height: 200px; /* Adjust the height as needed */
+    overflow-y: auto;  /* Enables vertical scrolling */
+    position: absolute;
+    background: #fff;
+    z-index: 1000;
+    width: 200px; /* Should match the width of the input field */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+}
+
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.sidebar {
+           background: #343a40;
+           color: #ffffff;
+           height: 100vh;
+           padding: 1rem;
+       }
+
+       .sidebar img {
+           width: 40px;
+           height: 40px;
+       }
+
+       .sidebar .navbar-brand {
+           display: flex;
+           align-items: center;
+       }
+
+       .sidebar .sidebar-brand-text {
+           font-size: 1.25rem;
+           margin-left: 0.5rem;
+       }
+
+       .sidebar .nav-item a {
+           color: #ffffff;
+           text-decoration: none;
+           padding: 0.75rem 1rem;
+           display: flex;
+           align-items: center;
+       }
+
+       .sidebar .nav-item a.active,
+       .sidebar .nav-item a:hover {
+           background: #007bff;
+           border-radius: 0.25rem;
+       }

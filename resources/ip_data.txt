@@ -1,0 +1,10 @@
+Interface: Realtek RTL8821CE 802.11ac PCIe Adapter
+IP Address: 192.168.0.103
+Subnet Mask: 255.255.255.0
+Gateway: 192.168.0.1
+
+Interface: Ethernet
+IP Address: 192.168.1.2
+Subnet Mask: 255.255.255.0
+Gateway: 192.168.0.1
+

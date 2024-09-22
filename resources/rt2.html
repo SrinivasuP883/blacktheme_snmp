@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s, box-shadow 0.4s;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-body,
+        .back-imagia {
+            position: absolute;
+            backface-visibility: hidden;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-body {
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .back-imagia {
+            transform: rotateY(180deg);
+            background-color: #007bff;
+            color: white;
+        }
+
+        .card-img-top {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle-imagia {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .text-center {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <img src="BEL_LOGO.png" style="width: 32px;height: 32px;">
+                    <div class="sidebar-brand-text mx-3"><span>40W BUC</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link" href="monitor.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="control.html"><i class="fas fa-cogs"></i><span>Configuration</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="status.html"><i class="fas fa-chart-line"></i><span>Status</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i><span>About Us</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid">
+                        <fieldset style="align-content: center; margin-top: 5px; margin-left: 15px;">
+                            <legend style="color: #333;">BUC MANAGEMENT & CONTROL</legend>
+                        </fieldset>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown d-sm-none no-arrow">
+                                <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- MAIN CONTENT START -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Card 1 -->
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-inner">
+                                    <img src="snmp.png" class="card-img-top" alt="SNMP Image">
+                                    <div class="card-body">
+                                        <h3 class="name-imagia">Front-End Development</h3>
+                                        <p class="subtitle-imagia">Technologies: HTML, CSS, Bootstrap, JavaFX</p>
+                                        <p class="text-center"><em>Creating responsive user interfaces that optimize user experience and engagement.</em></p>
+                                    </div>
+                                    <div class="back-imagia">
+                                        <h3 class="text-center">Technical Specifications</h3>
+                                        <p class="text-center">Utilizing Bootstrap v6.3.0 and JavaFX v22.0.2 for a seamless user experience.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-inner">
+                                    <img src="coding.png" class="card-img-top" alt="Coding Image">
+                                    <div class="card-body">
+                                        <h3 class="name-imagia">Back-End Development</h3>
+                                        <p class="subtitle-imagia">Technologies: Node.js, Python, Java</p>
+                                        <p class="text-center"><em>Focusing on server-side logic, database management, and API development.</em></p>
+                                    </div>
+                                    <div class="back-imagia">
+                                        <h3 class="text-center">Technical Specifications</h3>
+                                        <p class="text-center">Implementing Node.js and Python frameworks for scalable services.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-inner">
+                                    <img src="linux.png" class="card-img-top" alt="Linux Image">
+                                    <div class="card-body">
+                                        <h3 class="name-imagia">System Administration</h3>
+                                        <p class="subtitle-imagia">Technologies: Linux, Docker, Kubernetes</p>
+                                        <p class="text-center"><em>Ensuring system performance, security, and reliability.</em></p>
+                                    </div>
+                                    <div class="back-imagia">
+                                        <h3 class="text-center">Technical Specifications</h3>
+                                        <p class="text-center">Leveraging Linux and container orchestration for efficient management.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MAIN CONTENT END -->
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Bharat Electronics Limited. All Rights Reserved.</span></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script defer src="bootstrap.min.js"></script>
+    <script defer src="theme.js"></script>
+</body>
+
+</html>

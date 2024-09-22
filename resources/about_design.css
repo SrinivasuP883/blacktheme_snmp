@@ -1,0 +1,115 @@
+        /* Card Styles */
+        .card {
+            border: none; /* Remove default border */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: transform 0.3s ease; /* Smooth scaling effect */
+            position: relative; /* For absolute positioning of back */
+            overflow: hidden; /* Clip overflow */
+        }
+        
+        .card:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
+        
+        .card-img-top {
+            border-top-left-radius: 10px; /* Rounded corners for the top */
+            border-top-right-radius: 10px; /* Rounded corners for the top */
+            height: 200px; /* Set a fixed height */
+            object-fit: cover; /* Cover image without stretching */
+            transition: opacity 0.3s ease; /* Smooth transition for opacity */
+        }
+        
+        .name-imagia,
+        .subtitle-imagia,
+        .text-center {
+            display: block; /* Ensure block display for spacing */
+        }
+        
+        .card-body {
+            opacity: 1; /* Show card body by default */
+            transition: opacity 0.3s ease; /* Smooth fade transition */
+        }
+        
+        .footer-imagia {
+            opacity: 1; /* Show footer by default */
+            transition: opacity 0.3s ease; /* Smooth fade transition */
+        }
+        
+        .back-imagia {
+            display: none; /* Hide back by default */
+            position: absolute; /* Absolute positioning */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 123, 255, 0.9); /* Blue background with slight transparency */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Inner padding */
+            z-index: 1; /* Bring to front */
+            text-align: center; /* Center text */
+            color: white; /* White text color */
+        }
+        
+        .card:hover .card-body {
+            opacity: 0; /* Hide card body on hover */
+        }
+        
+        .card:hover .footer-imagia {
+            opacity: 0; /* Hide footer on hover */
+        }
+        
+        .card:hover .back-imagia {
+            display: block; /* Show back on hover */
+        }
+        
+        /* Hide image on hover */
+        .card:hover .card-img-top {
+            opacity: 0; /* Hide image on hover */
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .card {
+                margin-bottom: 20px; /* Space between cards on small screens */
+            }
+        }
+        
+
+        
+ /* Sidebar Styles */
+ .sidebar {
+    background: #343a40;
+    color: #ffffff;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.sidebar img {
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .sidebar-brand-text {
+    font-size: 1.25rem;
+    margin-left: 0.5rem;
+}
+
+.sidebar .nav-item a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .nav-item a.active,
+.sidebar .nav-item a:hover {
+    background: #007bff;
+    border-radius: 0.25rem;
+}

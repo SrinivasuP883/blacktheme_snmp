@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test1_design.css">
+    <link rel="stylesheet" href="boxicons.css">
+
+    <title>Responsive Dashboard Design #2 | AsmrProg</title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-code-alt'></i>
+            <div class="logo-name"><span>40W</span> BUC</div>
+        </a>
+        <ul class="side-menu">
+            <li class="active"><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="#"><i class='bx bx-store-alt'></i>Shop</a></li>
+            <li><a href="#"><i class='bx bx-analyse'></i>Analytics</a></li>
+            <li><a href="#"><i class='bx bx-message-square-dots'></i>Tickets</a></li>
+            <li><a href="#"><i class='bx bx-group'></i>Users</a></li>
+            <li><a href="#"><i class='bx bx-cog'></i>Settings</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="images/logo.png">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+         
+            <!-- Insights -->
+            <ul class="insights">
+                <li class="list-group-item d-flex align-items-center" style="height: 70px;">
+                    <!-- <h3 id="online_offline_label">BUC OFFLINE</h3>
+                    <span class="info">
+                        <button id="online_offline" class="status-button"></button>
+                    </span> -->
+                    <span id="online_offline_label" class="status-label">BUC OFFLINE</span>
+                                    <button id="online_offline" class="status-button"></button>
+                  
+                </li>
+                <li class="list-group-item d-flex align-items-center" style="height: 70px;">
+                    <!-- <h3 style="font-size: 15px;">Last Updated</h3> -->
+                    <div class="me-3">
+                        <label class="col-form-label" style="font-size: 16px; color: rgb(246, 194, 62);">Last Updated:</label>
+                    </div>
+                    <span class="info">
+                        <div id="current-time" class="col-form-label" style="font-size: 16px; margin-left: auto;"></div>
+                    </span>                    
+                    <!-- <div id="current-time" class="col-form-label" style="font-size: 16px; margin-left: auto;"></div> -->
+                </li>
+                
+                <li style="opacity: 0;">
+                   
+                </li>
+                <li style="opacity: 0;">
+                  
+                </li>
+            </ul>
+            <!-- End of Insights -->
+
+            <!-- testing purpose start -->
+            <div class="health_tables-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bxs-heart' ></i>
+                        <h3>Health Indication</h3>                      
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="color: var(--primary);">PARAMETER</th>
+                                <th style="color: var(--primary);">STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fan Health</td>
+                                <td><button id="bt1" class="btn btn-primary" type="button" style="border-radius: 23.6px; width: 30px; height: 31px;"></button></td>
+                            </tr>
+                            <tr>
+                                <td>Input Power</td>
+                                <td><button id="bt2" class="btn btn-primary" type="button" style="border-radius: 23.6px; width: 30px; height: 31px;"></button></td>
+                            </tr>
+                            <tr>
+                                <td>LO Power Level</td>
+                                <td><button id="bt3" class="btn btn-primary" type="button" style="border-radius: 23.6px; width: 30px; height: 31px;"></button></td>
+                            </tr>
+                            <tr>
+                                <td>PLO Lock Status</td>
+                                <td><button id="bt4" class="btn btn-primary" type="button" style="border-radius: 23.6px; width: 30px; height: 31px;"></button></td>
+                            </tr>
+                            <tr>
+                                <td>L-Band Input OverDrive</td>
+                                <td><button id="bt5" class="btn btn-primary" type="button" style="border-radius: 23.6px; width: 30px; height: 31px;"></button></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bxs-heart' ></i>
+                        <h3>Health Indication</h3>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="color: var(--primary);">PARAMETER</th>
+                                <th style="color: var(--primary);">STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>VSWR</td>
+                                <td><button id="bt6" class="btn btn-primary" type="button" style="border-radius: 23.6px; width: 30px; height: 31px;"></button></td>
+                            </tr>
+                            <tr>
+                                <td>DC Health 24V</td>
+                                <td><button id="bt7" class="btn btn-primary" type="button" style="border-radius: 23.6px; width: 30px; height: 31px;"></button></td>
+                            </tr>
+                            <tr>
+                                <td>Sequence Health</td>
+                                <td><button id="bt8" class="btn btn-primary" type="button" style="border-radius: 23.6px; width: 30px; height: 31px;"></button></td>
+                            </tr>
+                            <tr>
+                                <td>RF Forward Power Alarm</td>
+                                <td><button id="bt9" class="btn btn-primary" type="button" style="border-radius: 23.6px; width: 30px; height: 31px;"></button></td>
+                            </tr>
+                            <tr>
+                                <td>Temperature Health HPD</td>
+                                <td><button id="bt10" class="btn btn-primary" type="button" style="border-radius: 23.6px; width: 30px; height: 31px;"></button></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- testing purpose end -->
+
+        </main>
+
+    </div>
+    <script defer src="test_index.js"></script>
+    <script defer src="test1_script.js"></script>
+</body>
+
+</html>

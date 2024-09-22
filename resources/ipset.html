@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Data</title>
+</head>
+<body>
+    <form id="ipDataForm">
+        <label for="ipAddress">IP Address:</label>
+        <input type="text" id="ipAddress" required><br>
+        
+        <label for="subnetMask">Subnet Mask:</label>
+        <input type="text" id="subnetMask" required><br>
+        
+        <label for="gateway">Gateway:</label>
+        <input type="text" id="gateway" required><br>
+        
+        <label for="trap">TRAP IP:</label>
+        <input type="text" id="trap" required><br>
+        
+        <label for="interfaceName">Interface Name:</label>
+        <input type="text" id="interfaceName" required><br>
+    </form>
+    <button class="btn btn-info mt-2" type="submit" id="ipset" onclick="perform_set_ip">set details</button>
+
+
+    <script src="ipset_script.js"></script>
+</body>
+</html>

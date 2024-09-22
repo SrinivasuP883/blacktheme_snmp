@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-all.min.css">
+    <link rel="stylesheet" href="control_design.css">
+
+    <style>
+/* Base styling for the cards */
+.cards {
+    border-radius: 8px;
+    background-color: #ffffff; /* Light background for better contrast */
+    border: 1px solid #dcdcdc; /* Light border */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.cards-body {
+    padding: 16px;
+}
+
+.cards-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333333; /* Darker text color for readability */
+}
+
+/* Hover effect for floating cards */
+.cards:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for floating effect */
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Specific colors for each card */
+#rf_parameters_card {
+    background-color: #e0f7fa; /* Light cyan */
+}
+
+#system_settings_card {
+    background-color: #ffe0b2; /* Light orange */
+}
+
+#network_setting_card {
+    background-color: #dcedc8; /* Light green */
+}
+
+
+.cards.clicked {
+    border: 1px solid #333333; /* Darker border for clicked state */
+    background-color: #b0bec5; /* Light grey color for clicked state */
+}
+
+
+/* Table Styles */
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* color: #333; */
+    /* class="text-success" */
+}
+
+.modern-table th, .modern-table td {
+    padding: 15px;
+    text-align: left;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+.modern-table th {
+    background-color: #004494; 
+    /* pdated blue for headers */
+    /* background-color: #007bff; Updated blue for headers */
+
+    color: #fff;
+    font-weight: bold;
+}
+
+.modern-table tr {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.modern-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.modern-table tr:hover {
+    background-color: #e2e6ea; /* Lighter hover effect */
+    transform: scale(1.01); /* Slightly scale up the row on hover */
+}
+
+.modern-table td {
+    /* border-right: 1px solid #ddd; */
+}
+
+.modern-table td:last-child {
+    border-right: none; /* Remove right border from the last column */
+}
+
+        /* card */
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .card-header {
+            /* background-color: #003366; Dark Blue for header */
+            background-color: #007bff; 
+
+            color: #fff;
+            border-bottom: 1px solid #002244;
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+/* dropdown */
+/* Dropdown Styles */
+.dropdown2 .dropdown2-toggle {
+            background-color: #0056b3; /* Dark Blue for dropdown button */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown2 .dropdown2-toggle:hover {
+            background-color: #003d80;
+        }
+
+        .dropdown2-menu {
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            min-width: 160px;
+            padding: 10px 0;
+            border: 1px solid #ddd;
+        }
+
+        .dropdown2-item {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown2-item:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#"><img src="BEL_LOGO.png" style="width: 32px;height: 32px;">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3"><span style="width: 20px;height: 20px;">40W BUC</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link" href=" "></a><a class=" " href=" "></a></li>
+                    <li class="nav-item"><a class="nav-link" href="monitor.html"><i class="fas fa-th-large"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="control.html"><i class="fas fa-cogs"></i><span>Configuration</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="status.html"><i class="fas fa-chart-line"></i><span>Status</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i><span>About Us</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <fieldset style="align-content: center;">
+                            <legend style="color: #333;">BUC MANAGEMENT & CONTROL</legend>
+                        </fieldset>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                                    <form class="me-auto navbar-search w-100">
+                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+<!-- TESTING HEADER BLOCK START -->
+<div class="row">
+    <div class="col-md-4">
+        <div class="cards shadow mb-3" id="rf_parameters_card">
+            <div class="cards-body d-flex align-items-center">
+                <h5 id="rf_parameters_settings_card_text" class="mb-0">RF Parameters</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="cards shadow mb-3" id="system_settings_card">
+            <div class="cards-body d-flex align-items-center">
+                <h5 id="system_settings_card_text" class="mb-0">System Settings</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="cards shadow mb-3" id="network_setting_card">
+            <div class="cards-body d-flex align-items-center">
+                <h5 id="network_settings_card_text" class="mb-0">Network Settings</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- TESTING HEADER BLOCK END -->
+
+<!-- ======================================= -->
+<!-- TESTING ROW BY ROW START -->
+<!--========================================= -->
+
+<!-- FIRST ROW NETWORK SETTINGS ROW START -->
+<!-- NETWORK SETTINGS TABLE -->
+          <div class="row mb-4">
+            <div class="col">
+                <div class="card" id="network_setting_row" style="margin-top: 25px;">
+                    <div class="card-header">
+                        <h5 class="m-0 fw-bold">Network Settings</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="modern-table">
+                            <tbody>
+                                <tr>
+                                    <td><strong class="text-success">IP Address</strong></td>
+                                    <td><input type="text" id="ip-address" class="form-control" placeholder="Enter IP Address"></td>
+                                    <td><button class="btn btn-primary" type="button" onclick="setIpSettings()">Set</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="text-success">Subnet Mask</strong></td>
+                                    <td><input type="text" id="subnet-mask" class="form-control" placeholder="Enter Subnet Mask"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="text-success">Gateway</strong></td>
+                                    <td><input type="text" id="gateway" class="form-control" placeholder="Enter Gateway"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="text-success">Trap IP</strong></td>
+                                    <td><input type="text" id="trap-ip" class="form-control" placeholder="Enter Trap IP"></td>
+                                    <td><button class="btn btn-primary" type="button">Set</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- FIRST ROW NETWORK SETTINGS ROW END -->
+
+
+<!-- ===================================== -->
+ <!-- SECOND ROW RF PARAMETERS ROW START -->
+<!-- ====================================== -->
+<div class="row mb-4">
+    <div class="col">
+        <div class="card" id="rf_parameters_row">
+            <div class="card-header">
+                <h5 class="m-0 fw-bold">RF Parameters</h5>
+            </div>
+            <div class="card-body">
+                <table class="modern-table">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px; text-align: left;"><strong class="text-success">RF Mute</strong></td>
+                            <td style="padding: 15px;">
+                                <div class="dropdown2">
+                                    <button id="rfmute_layout_dropdownButton" class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">
+                                        OFF 
+                                    </button>
+                                    <div id="rfmute_layout" class="dropdown-menu">
+                                        <div class="dropdown-item" data-value="0">OFF</div>
+                                        <div class="dropdown-item" data-value="1">ON</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding: 15px;">
+                                <button id="rf_mute_set_button" class="btn btn-primary" type="button" style="width: 67px; border-radius: 17.6px;">Set</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; text-align: left;"><strong class="text-success">Extref10MHz</strong></td>
+                            <td style="padding: 15px;">
+                                <div class="dropdown2">
+                                    <button id="extref_layout_dropdownButton" class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">
+                                        External 
+                                    </button>
+                                    <div id="extref_layout" class="dropdown-menu">
+                                        <div class="dropdown-item" data-value="0">External</div>
+                                        <div class="dropdown-item" data-value="1">Internal</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding: 15px;">
+                                <button id="extref_set_button" class="btn btn-primary" type="button" style="width: 67px; border-radius: 17.6px;">Set</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; text-align: left;"><strong class="text-success">Digital Attn</strong></td>
+                            <td style="padding: 15px;">
+                                <input type="text" class="form-control" id="number-input" placeholder=" " oninput="filterValues()" style="width: 50%; box-sizing: border-box;">
+                                <div id="suggestions" class="suggestions"></div>
+                            </td>
+                            <td style="padding: 15px;">
+                                <button id="digital_attn_set_button" class="btn btn-primary" type="button" style="width: 67px; border-radius: 17.6px;">Set</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ====================================== -->
+ <!-- SECOND ROW RF PARAMETERS ROW END -->
+<!-- ====================================== -->
+
+<!--============================================ -->
+<!-- THIRD ROW SYSTEM SETTINGS ROW START -->
+<!--============================================ -->
+<div class="row mb-4">
+    <div class="col">
+        <div class="card" id="system_settings_row" style="margin-top: -20px;">
+            <div class="card-header">
+                <h5 class="m-0 fw-bold">System Settings</h5>
+            </div>
+            <div class="card-body">
+                <table class="modern-table">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px; text-align: left;"><strong class="text-success">Buc Self Master</strong></td>
+                            <td style="padding: 15px;">
+                                <div class="dropdown2">
+                                    <button id="Buc_self_master_layout_dropdownButton" class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">
+                                        Enable 
+                                    </button>
+                                    <div id="Buc_self_master_layout" class="dropdown-menu">
+                                        <div class="dropdown-item" data-value="0">Enable</div>
+                                        <div class="dropdown-item" data-value="1">Disable</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding: 15px;">
+                                <button id="buc_self_master_set_button" class="btn btn-primary" type="button" style="width: 67px; border-radius: 17.6px;">Set</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; text-align: left;"><strong class="text-success">Buc Reboot</strong></td>
+                            <td style="padding: 15px;">
+                                <div class="dropdown2">
+                                    <button id="Buc_reboot_layout_dropdownButton" class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">
+                                        No 
+                                    </button>
+                                    <div id="Buc_reboot_layout" class="dropdown-menu">
+                                        <div class="dropdown-item" data-value="0">Yes</div>
+                                        <div class="dropdown-item" data-value="1">No</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding: 15px;">
+                                <button id="buc_reboot_set_button" class="btn btn-primary" type="button" style="width: 67px; border-radius: 17.6px;">Set</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!--============================================ -->
+<!-- THIRD ROW SYSTEM SETTINGS ROW END -->
+<!--============================================ -->
+
+
+<!-- ======================================= -->
+<!-- TESTING ROW BY ROW END -->
+<!--========================================= --> 
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Bharat Electronics Limited. All Rights Reserverd.</span></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="bootstrap.min.js"></script>
+    <script src="theme.js"></script>
+    <script defer src="control_script.js"></script>
+    <!-- <script defer src="control_script3.js"></script> -->
+</body>
+
+</html>
+

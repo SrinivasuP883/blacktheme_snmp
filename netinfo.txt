@@ -1,0 +1,59 @@
+From the `ifconfig` output you provided, here are the IPv4 and IPv6 addresses for each network interface:
+
+### Network Interface Details
+
+#### 1. **Interface: `enp19s0` (Ethernet)**
+- **IPv4 Address:** `10.0.0.100`
+  - **Netmask:** `255.255.255.0`
+  - **Broadcast:** `10.0.0.255`
+- **IPv6 Address:** `fe80::82c3:bcff:aff9:e2bc`
+  - **Prefix Length:** `64`
+  - **Scope ID:** `0x20<link>`
+
+#### 2. **Interface: `lo` (Loopback)**
+- **IPv4 Address:** `127.0.0.1`
+  - **Netmask:** `255.0.0.0`
+- **IPv6 Address:** `::1`
+  - **Prefix Length:** `128`
+  - **Scope ID:** `0x10<host>`
+
+#### 3. **Interface: `wlp7s0` (Wireless)**
+- **IPv4 Address:** `192.168.29.26`
+  - **Netmask:** `255.255.255.0`
+  - **Broadcast:** `192.168.29.255`
+- **IPv6 Addresses:**
+  - `2409:40f2:1:5e3:d09a:3585:54da:f42`
+    - **Prefix Length:** `64`
+    - **Scope ID:** `0x0<global>`
+  - `2409:40f2:1:5e3:4064:4e45:3922:b95d`
+    - **Prefix Length:** `64`
+    - **Scope ID:** `0x0<global>`
+  - `fe80::dfac:19be:6d9f:65bc`
+    - **Prefix Length:** `64`
+    - **Scope ID:** `0x20<link>`
+
+### Summary
+
+- **IPv4 Addresses:**
+  - **`enp19s0`:** `10.0.0.100`
+  - **`lo`:** `127.0.0.1` (loopback)
+  - **`wlp7s0`:** `192.168.29.26`
+
+- **IPv6 Addresses:**
+  - **`enp19s0`:** `fe80::82c3:bcff:aff9:e2bc`
+  - **`wlp7s0`:**
+    - `2409:40f2:1:5e3:d09a:3585:54da:f42`
+    - `2409:40f2:1:5e3:4064:4e45:3922:b95d`
+    - `fe80::dfac:19be:6d9f:65bc`
+
+### Using These Addresses in Your Java Code
+
+To ensure your Java program only deals with IPv4 addresses, you can filter them as shown previously. Here’s a quick reminder of the relevant code snippet to process only IPv4 addresses:
+
+```java
+if (inetAddress instanceof Inet4Address) {
+    // Process IPv4 address
+}
+```
+
+In this case, you would use the IPv4 addresses `10.0.0.100` from `enp19s0` or `192.168.29.26` from `wlp7s0` as required for your network operations.
